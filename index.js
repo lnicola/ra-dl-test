@@ -17,7 +17,7 @@ export async function download() {
             throw err;
     });
     let lastPercentage = 0;
-    const url = "https://github.com/rust-analyzer/rust-analyzer/releases/download/2021-01-18/rust-analyzer-linux.gz";
+    const url = "https://github.com/rust-analyzer/rust-analyzer/releases/download/2021-01-18/rust-analyzer-x86_64-pc-windows-msvc.gz";
     await downloadFile(url, tempFile, 0o755, true, (readBytes, totalBytes) => {
         const newPercentage = ((readBytes / totalBytes) * 100).toFixed(0);
         if (newPercentage != lastPercentage) {
