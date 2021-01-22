@@ -31,7 +31,7 @@ export async function download() {
 async function downloadFile(url, destFilePath, mode, gunzip, onProgress) {
     const res = await fetch(url);
     if (!res.ok) {
-        console.log(await res.text);
+        console.log(await res.text());
         throw new Error(`Got response ${res.status} when trying to download a file.`);
     }
     const totalBytes = Number(res.headers.get('content-length'));
